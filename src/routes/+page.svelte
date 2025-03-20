@@ -1,59 +1,9 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-</script>
-
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<h1> Mike Wazowski</h1>
+   
+<img src="./images/mike.png" alt="mike" width="500px">
+ 
+<p>Michael "Mike" Thomas Wazowski is the deuteragonist of the 2001 Disney Pixar animated film Monsters, Inc. and the protagonist of its 2013 prequel.
+     Depicted as a diminutive, one-eyed monster with a wisecracking veneer, Mike is an employee of Monsters, Incorporated, where he works closely with his longtime partner/best friend Sulley.
+     Mike's world gets turned upside down when a human girl (nicknamed "Boo") enters the monster world.
+     Teaming up with Sulley to return Boo to her world, Mike uncovers a company conspiracy and helps solve an energy crisis that plagues the entire city of Monstropolis
+ </p>
