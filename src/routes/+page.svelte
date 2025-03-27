@@ -14,6 +14,34 @@
     Mike's world gets turned upside down when a human girl (nicknamed "Boo") enters the monster world.
     Teaming up with Sulley to return Boo to her world, Mike uncovers a company conspiracy and helps solve an energy crisis that plagues the entire city of Monstropolis
 </p>
+
+{#await fetch("https://api.github.com/users/mike")}
+  <p>Loading...</p>
+{:then response}
+  {#await response.json()}
+    <p>Decoding...</p>
+  {:then data} 
+    <section>
+      <h2>My Github Stats</h2>
+      <dl>
+        <dt>Followers</dt>
+        <dd>{data.followers}</dd>
+        <dt>Following</dt>
+        <dd>{data.following}</dd>
+        <dt>Public Repos</dt>
+        <dd>{data.public_repos}</dd>
+      </dl>
+    </section>
+  {:catch error}
+    <p class="error">Something went wrong: {error.message}</p>
+  {/await}
+  {:catch error}
+    <p class="error">Something went wrong: {error.message}</p>
+
+
+{/await}
+
+
 <h2>
   Latest Projects
 </h2>
@@ -22,3 +50,28 @@
   <Project data={p} hLevel="3"/>
 {/each}
 </div>
+
+<style>
+  dl{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  dt{
+    grid-row: 1;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--border-gray);
+    text-transform: uppercase;
+  }
+  dd{
+    font-family: inherit;
+    font-weight: bold;
+  }
+  section{
+    border-width:0.15em;
+  	border-style:solid;
+	  border-color:var(--border-gray);
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
